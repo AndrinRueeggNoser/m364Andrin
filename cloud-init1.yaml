@@ -1,0 +1,15 @@
+#cloud-config                # Gibt das cloud-config Format an
+users:                       # Startet Benutzerkonfiguration
+  - name: ubuntu             # Erstellt Benutzer 'ubuntu'
+    sudo: ALL=(ALL) NOPASSWD:ALL   # Passwortloser sudo-Zugriff
+    groups: users, admin     # Fügt zu Gruppen 'users' und 'admin' hinzu
+    home: /home/ubuntu       # Setzt Home-Verzeichnis
+    shell: /bin/bash         # Legt die Shell auf bash fest
+    ssh_authorized_keys:     # Fügt SSH-Schlüssel hinzu
+    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCYMKzOHA19DQ+bANuJcx61uEUzpK90N3hluIyszAndXqHEp3e3eYWpfA05veCKpiPpcZSoBYXK7wZ/3N6N/SEQaXGiytP5cPXaJzh4RAZ9OaVE1z9dQqfytZTsNeWyYvsWkCRhTQJFZ41D1EyjhUj0vREDaQu5UHoyyt2efmVAlMBAKAz9D07dtnL9AU/q0j6MXriHyHdbww3MQ8hvsmhWL5FLskJ6/udvjNKwXAPyO0i3Ro5vUlMb5S7AV4Rh/meId9vT3iRccqreovky++BNgJxI/K/ygUW43OecSt9ZE9yIt3D0SC8AJpbwCLOLrSQkMh5gzRMtTzMN31LjV+Ud aws-key     # Öffentlicher SSH-Schlüssel
+ssh_pwauth: false             # Deaktiviert Passwort-Login
+disable_root: false           # Erlaubt Root-Zugriff
+package_update: true          # Aktualisiert Paketlisten
+packages:                     # Installiert Pakete
+  - curl                      # Installiert 'curl'
+  - wget                      # Installiert 'wget'
