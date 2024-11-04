@@ -1,4 +1,3 @@
-
 #cloud-config                # Gibt das cloud-config Format an
 users:                       # Startet Benutzerkonfiguration
   - name: ubuntu             # Erstellt Benutzer 'ubuntu'
