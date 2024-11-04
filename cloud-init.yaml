@@ -1,4 +1,4 @@
-```yaml
+
 #cloud-config                # Gibt das cloud-config Format an
 users:                       # Startet Benutzerkonfiguration
   - name: ubuntu             # Erstellt Benutzer 'ubuntu'
@@ -14,4 +14,3 @@ package_update: true          # Aktualisiert Paketlisten
 packages:                     # Installiert Pakete
   - curl                      # Installiert 'curl'
   - wget                      # Installiert 'wget'
-```
